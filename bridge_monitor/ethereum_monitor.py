@@ -142,9 +142,9 @@ class EthereumMonitor:
                 if data.get('status') != '1':
                     error_msg = data.get('message', 'Unknown error')
                     if 'rate limit' in error_msg.lower():
-                        logger.warning(f"Etherscan API rate limit exceeded")
+                        logger.warning("Etherscan API rate limit exceeded")
                     elif 'invalid api key' in error_msg.lower():
-                        logger.error(f"Invalid Etherscan API key")
+                        logger.error("Invalid Etherscan API key")
                     elif error_msg == 'No transactions found':
                         # Normal end-of-pagination signal from Etherscan
                         pass
@@ -218,7 +218,7 @@ class EthereumMonitor:
             return results
             
         except requests.exceptions.Timeout:
-            logger.error(f"Etherscan API timeout during batch lookup")
+            logger.error("Etherscan API timeout during batch lookup")
             return results
         except requests.exceptions.RequestException as e:
             logger.error(f"Etherscan API request failed during batch lookup: {e}")

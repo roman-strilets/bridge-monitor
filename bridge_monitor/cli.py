@@ -53,7 +53,7 @@ def format_report(report: dict):
     print(" BRIDGE TRANSACTION CHECKER REPORT")
     print("="*60)
     
-    print(f"\nBlockchain Status:")
+    print("\nBlockchain Status:")
     print(f"  Ethereum Block: {report['eth_block']}")
     print(f"  Beam Height:    {report['beam_height']}")
     
@@ -63,14 +63,14 @@ def format_report(report: dict):
         print(f" Token: {token_name}")
         print(f"{'='*60}")
         
-        print(f"\nETH → Beam Transactions:")
+        print("\nETH → Beam Transactions:")
         eth2beam = token_stats.get('eth2beam', {})
         print(f"  Total:     {eth2beam.get('total', 0)}")
         print(f"  Completed: {eth2beam.get('completed', 0)}")
         print(f"  Pending:   {eth2beam.get('pending', 0)}")
         print(f"  Failed:    {eth2beam.get('failed', 0)}")
         
-        print(f"\nBeam → ETH Transactions:")
+        print("\nBeam → ETH Transactions:")
         beam2eth = token_stats.get('beam2eth', {})
         print(f"  Total:     {beam2eth.get('total', 0)}")
         print(f"  Completed: {beam2eth.get('completed', 0)}")
@@ -78,14 +78,14 @@ def format_report(report: dict):
         print(f"  Failed:    {beam2eth.get('failed', 0)}")
     
     if report['stuck_transactions']:
-        print(f"\n\n⚠️  FAILED TRANSACTIONS:")
+        print("\n\n⚠️  FAILED TRANSACTIONS:")
         for tx in report['stuck_transactions']:
             print(f"\n  [{tx['token']}] [{tx['direction']}] Message ID: {tx['message_id']}")
             print(f"    Status: {tx['status']}")
             if tx['eth_tx_hash']:
                 print(f"    ETH TX: {tx['eth_tx_hash']}")
     else:
-        print(f"\n\n✅ No failed transactions")
+        print("\n\n✅ No failed transactions")
     
     print("\n" + "="*60 + "\n")
 
