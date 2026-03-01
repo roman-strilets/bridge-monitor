@@ -1,0 +1,62 @@
+{
+  "common": {
+    "ethereum": {
+      "rpc_url": "https://eth-mainnet.g.alchemy.com/v2/YOUR-API-KEY",
+      "etherscan_api_key": "YourApiKeyToken",
+      "etherscan_api_url": "https://api.etherscan.io/v2/api",
+      "chain_id": "1"
+    },
+    "beam": {
+      "wallet_api_url": "http://127.0.0.1:10000/api/wallet"
+    }
+  },
+  "tokens": {
+    "BEAM": {
+      "name": "Beam Native Token",
+      "ethereum": {
+        "pipe_contract_address": "0x1234567890123456789012345678901234567890",
+        "start_block": 0
+      },
+      "beam": {
+        "pipe_contract_id": "your-beam-pipe-contract-id",
+        "pipe_wasm_path": "pipe.wasm"
+      }
+    },
+    "USDT": {
+      "name": "Tether USD",
+      "ethereum": {
+        "pipe_contract_address": "0x0000000000000000000000000000000000000000",
+        "token_contract_address": "0xdac17f958d2ee523a2206206994597c13d831ec7",
+        "start_block": 0
+      },
+      "beam": {
+        "pipe_contract_id": "your-usdt-pipe-contract-id",
+        "pipe_wasm_path": "pipe_usdt.wasm"
+      }
+    },
+    "USDC": {
+      "name": "USD Coin",
+      "ethereum": {
+        "pipe_contract_address": "0x0000000000000000000000000000000000000000",
+        "token_contract_address": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48",
+        "start_block": 0
+      },
+      "beam": {
+        "pipe_contract_id": "your-usdc-pipe-contract-id",
+        "pipe_wasm_path": "pipe_usdc.wasm"
+      }
+    },
+    "DAI": {
+      "name": "Dai Stablecoin",
+      "ethereum": {
+        "pipe_contract_address": "0x0000000000000000000000000000000000000000",
+        "token_contract_address": "0x6b175474e89094c44da98b954eedeac495271d0f",
+        "start_block": 0
+      },
+      "beam": {
+        "pipe_contract_id": "your-dai-pipe-contract-id",
+        "pipe_wasm_path": "pipe_dai.wasm"
+      }
+    }
+  }
+}

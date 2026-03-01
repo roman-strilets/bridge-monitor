@@ -1,0 +1,13 @@
+[project]
+name = "bridge-monitor"
+version = "0.1.0"
+description = "Transaction checker for Beam-Ethereum bridge"
+requires-python = ">=3.10"
+dependencies = [
+    "web3>=6.0.0",
+    "requests>=2.31.0",
+    "sqlalchemy>=2.0.0",
+]
+
+[project.scripts]
+bridge-monitor = "bridge_monitor.cli:main"
